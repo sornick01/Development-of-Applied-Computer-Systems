@@ -30,6 +30,6 @@ public sealed class RelayCommand : ICommand
             CommandManager.RequerySuggested += value;
 
         remove =>
-            CommandManager.RequerySuggested -= value;
+            CommandManager.RequerySuggested -= value; //some comment
     }
 }
