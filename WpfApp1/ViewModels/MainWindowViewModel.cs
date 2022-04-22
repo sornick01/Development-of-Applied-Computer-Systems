@@ -9,6 +9,7 @@ namespace WpfApp1.ViewModels;
 public class MainWindowViewModel : ViewModelBase
 {
     private Brush _ellipseBrush = Brushes.Chartreuse;
+    private bool? _color = false;
     private int _size = 50;
     private int countButtonClicked = 0;
     
@@ -20,6 +21,18 @@ public class MainWindowViewModel : ViewModelBase
         {
             _size = value;
             RaisePropertyChanged(nameof(Size));
+        }
+    }
+
+    public bool? Color
+    {
+        get =>
+            _color;
+
+        set
+        {
+            _color = value;
+            RaisePropertyChanged(nameof(Color));
         }
     }
     
@@ -53,7 +66,7 @@ public class MainWindowViewModel : ViewModelBase
     private void ChangeColor()
     {
         countButtonClicked++;
-
+    
         if (countButtonClicked % 2 == 1)
         {
             EllipseBrush = Brushes.Fuchsia;
