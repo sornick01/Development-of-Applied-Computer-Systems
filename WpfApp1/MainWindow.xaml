@@ -4,9 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
+        xmlns:viewModels="clr-namespace:WpfApp1.ViewModels" 
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+    <Window.DataContext>
+        <viewModels:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid ShowGridLines="True" Background="Aqua">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions >
+        <Button Grid.Column="0" Height="{Binding Size, Mode=OneWay}" Width="{Binding Size, Mode=OneWay}" Margin="10" Background="{Binding EllipseBrush, Mode = OneWay}" Command="{Binding ChangeColorCommand, Mode=OneWay}" />
+        <Ellipse Grid.Column="1" Height="{Binding Size, Mode=OneWay}" Width="{Binding Size, Mode=OneWay}" Fill="{Binding EllipseBrush, Mode = OneWay}" Stroke="Black"/>
     </Grid>
 </Window>
