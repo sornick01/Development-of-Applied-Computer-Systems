@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using System.Windows.Media;
 using Sorokin.Wpf.MVVM.Core.Command;
 using Sorokin.Wpf.MVVM.Core.ViewModel;
@@ -11,7 +10,7 @@ public class MainWindowViewModel : ViewModelBase
     private Brush _ellipseBrush = Brushes.Chartreuse;
     private bool? _color = false;
     private int _size = 50;
-    private int countButtonClicked = 0;
+    private int countButtonClicked;
     
     public int Size
     {
