@@ -7,8 +7,4 @@
         <UseWpf>true</UseWpf>
     </PropertyGroup>
 
-    <ItemGroup>
-      <Folder Include="Converter" />
-    </ItemGroup>
-
 </Project>
