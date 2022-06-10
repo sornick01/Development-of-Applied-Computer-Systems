@@ -35,61 +35,14 @@ internal sealed class ArithmeticConverter : MultiConverterBase
         var leftOperand = (dynamic)values[0];
         var rightOperand = (dynamic)values[1];
 
-        // if (HasMethod(leftOperand, "op_A"))
-        //TODO:change ops names
-        switch (operation)
+        return operation switch
         {
-            case "+":
-            {
-                if (HasMethod(leftOperand, "op_Addition") &&
-                    HasMethod(rightOperand, "op_Addition"))
-                    return leftOperand + rightOperand;
-                throw new ArgumentException(
-                    "The argument type does not support the operation", nameof(leftOperand));
-            }
-            case "-":
-            {
-                if (HasMethod(leftOperand, "op_Addition") &&
-                    HasMethod(rightOperand, "op_Addition"))
-                    return leftOperand - rightOperand;
-                throw new ArgumentException(
-                    "The argument type does not support the operation", nameof(leftOperand));
-            }
-            case "*":
-            {
-                if (HasMethod(leftOperand, "op_Addition") &&
-                    HasMethod(rightOperand, "op_Addition"))
-                    return leftOperand * rightOperand;
-                throw new ArgumentException(
-                    "The argument type does not support the operation", nameof(leftOperand));
-            }
-            case "/":
-            {
-                if (HasMethod(leftOperand, "op_Addition") &&
-                    HasMethod(rightOperand, "op_Addition"))
-                    return leftOperand / rightOperand;
-                throw new ArgumentException(
-                    "The argument type does not support the operation", nameof(leftOperand));
-            }
-            case "%":
-            {
-                if (HasMethod(leftOperand, "op_Addition") &&
-                    HasMethod(rightOperand, "op_Addition"))
-                    return leftOperand % rightOperand;
-                throw new ArgumentException(
-                    "The argument type does not support the operation", nameof(leftOperand));
-            }
-            default: throw new ArgumentException("Invalid operation", nameof(operation));
-        }
-
-        // return operation switch
-        // {
-        //     "+" => leftOperand + rightOperand,
-        //     "-" => leftOperand - rightOperand,
-        //     "*" => leftOperand * rightOperand,
-        //     "/" => leftOperand / rightOperand,
-        //     "%" => leftOperand % rightOperand,
-        //     _ => throw new ArgumentException("Invalid operation", nameof(operation))
-        // };
+            "+" => leftOperand + rightOperand,
+            "-" => leftOperand - rightOperand,
+            "*" => leftOperand * rightOperand,
+            "/" => leftOperand / rightOperand,
+            "%" => leftOperand % rightOperand,
+            _ => throw new ArgumentException("Invalid operation", nameof(operation))
+        };
     }
 }
