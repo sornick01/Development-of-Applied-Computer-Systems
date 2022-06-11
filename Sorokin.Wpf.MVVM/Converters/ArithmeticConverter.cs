@@ -2,17 +2,10 @@
 using System.Windows;
 using Sorokin.Wpf.MVVM.Core.Converter;
 
-namespace Sorokin.Wpf.MVVM;
+namespace Sorokin.Wpf.MVVM.Converters;
 
 internal sealed class ArithmeticConverter : MultiConverterBase
-{
-
-    private bool HasMethod(object objectToCheck, string methodName)
-    {
-        var type = objectToCheck.GetType();
-        return type.GetMethod(methodName) != null;
-    }
-
+{ 
     public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
     {
         if (!(parameter is string operation))
